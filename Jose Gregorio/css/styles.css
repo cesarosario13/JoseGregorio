@@ -1,0 +1,629 @@
+:root {
+    --primary-color: #3a86ff;
+    --secondary-color: #8338ec;
+    --dark-color: #212529;
+    --light-color: #f8f9fa;
+    --text-color: #333;
+    --text-light: #6c757d;
+    --font-main: 'Montserrat', sans-serif;
+    --font-heading: 'Playfair Display', serif;
+    --transition: all 0.3s ease;
+}
+
+/* Estilos generales */
+body {
+    font-family: var(--font-main);
+    color: var(--text-color);
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+a {
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.btn {
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+    transition: var(--transition);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: #2a75f5;
+    border-color: #2a75f5;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(58, 134, 255, 0.2);
+}
+
+.btn-outline-primary {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.section-header {
+    margin-bottom: 3rem;
+}
+
+.section-header h2 {
+    position: relative;
+    display: inline-block;
+    font-size: 2.5rem;
+}
+
+.section-header h2:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 50px;
+    height: 3px;
+    background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+}
+
+.section-header .section-subtitle {
+    color: var(--text-light);
+    font-size: 1.1rem;
+    margin-top: 1rem;
+}
+
+/* Navbar */
+.navbar {
+    padding: 20px 0;
+    transition: var(--transition);
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+}
+
+.navbar.scrolled {
+    padding: 10px 0;
+    background: rgba(0, 0, 0, 0.9);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.brand-icon {
+    margin-right: 10px;
+    font-size: 1.8rem;
+    color: var(--primary-color);
+}
+
+.brand-text {
+    color: white;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 500;
+    padding: 8px 15px;
+    margin: 0 5px;
+    border-radius: 50px;
+    transition: var(--transition);
+}
+
+.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-nav .nav-link.active {
+    color: white;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Hero Carousel */
+.hero-carousel {
+    position: relative;
+    margin-top: -80px;
+    height: 100vh;
+    min-height: 700px;
+}
+
+.carousel {
+    height: 100%;
+}
+
+.carousel-inner, .carousel-item {
+    height: 100%;
+}
+
+.carousel-item img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    filter: brightness(0.7);
+}
+
+.carousel-indicators button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin: 0 8px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: none;
+}
+
+.carousel-indicators button.active {
+    background-color: var(--primary-color);
+}
+
+.carousel-caption {
+    top: 50%;
+    transform: translateY(-50%);
+    bottom: auto;
+    text-align: left;
+    left: 10%;
+    right: 10%;
+}
+
+.carousel-caption h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.carousel-caption .lead {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.scroll-down {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    animation: bounce 2s infinite;
+}
+
+.scroll-down a {
+    color: white;
+    font-size: 1.5rem;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0) translateX(-50%);
+    }
+    40% {
+        transform: translateY(-20px) translateX(-50%);
+    }
+    60% {
+        transform: translateY(-10px) translateX(-50%);
+    }
+}
+
+/* Legacy Cards */
+.legacy-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    transition: var(--transition);
+    height: 100%;
+    position: relative;
+}
+
+.legacy-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.card-icon {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+    z-index: 2;
+    box-shadow: 0 5px 15px rgba(58, 134, 255, 0.3);
+}
+
+.legacy-card .card-img {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.legacy-card .card-body {
+    padding: 25px;
+}
+
+.legacy-card h5 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+}
+
+.legacy-card p {
+    color: var(--text-light);
+    margin-bottom: 20px;
+}
+
+.card-link {
+    color: var(--primary-color);
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+}
+
+.card-link i {
+    margin-left: 5px;
+    transition: var(--transition);
+}
+
+.card-link:hover i {
+    transform: translateX(5px);
+}
+
+/* Biografía Section */
+.image-frame {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.image-frame img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.frame-decoration {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border: 10px solid rgba(58, 134, 255, 0.1);
+    border-radius: 10px;
+    pointer-events: none;
+}
+
+.bio-list {
+    list-style: none;
+    padding: 0;
+    margin: 25px 0;
+}
+
+.bio-list li {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.bio-list i {
+    color: var(--primary-color);
+    margin-right: 10px;
+    font-size: 1.1rem;
+}
+
+/* Quote Section */
+.quote-section {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.quote-section:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path fill="rgba(255,255,255,0.05)" d="M0,0 L100,0 L100,100 L0,100 Z"></path></svg>');
+    background-size: cover;
+    opacity: 0.2;
+}
+
+.quote-content {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.quote-icon {
+    font-size: 3rem;
+    color: rgba(255, 255, 255, 0.2);
+    margin-bottom: 20px;
+}
+
+.quote-section blockquote {
+    font-size: 1.5rem;
+    font-weight: 300;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.quote-author {
+    font-size: 1.2rem;
+    font-weight: 600;
+    font-style: normal;
+}
+
+/* Footer Simplificado */
+.footer-simple {
+    background-color: var(--dark-color);
+    color: white;
+    padding: 60px 0 20px;
+    text-align: center;
+}
+
+.footer-simple .footer-brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.footer-simple .brand-icon {
+    font-size: 2rem;
+    margin-right: 10px;
+    color: var(--primary-color);
+}
+
+.footer-simple .brand-text {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+}
+
+.footer-simple .footer-text {
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 30px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.footer-simple .footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 20px;
+    margin-top: 30px;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .carousel-caption h1 {
+        font-size: 2.8rem;
+    }
+    
+    .carousel-caption .lead {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar-brand .brand-text {
+        font-size: 1.2rem;
+    }
+    
+    .hero-carousel {
+        min-height: 600px;
+    }
+    
+    .carousel-caption {
+        text-align: center;
+        left: 5%;
+        right: 5%;
+    }
+    
+    .carousel-caption h1 {
+        font-size: 2.2rem;
+    }
+    
+    .section-header h2 {
+        font-size: 2rem;
+    }
+    
+    .legacy-card {
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 576px) {
+    .carousel-caption h1 {
+        font-size: 1.8rem;
+    }
+    
+    .btn {
+        padding: 10px 20px;
+    }
+    
+    .footer-simple .brand-text {
+        font-size: 1.2rem;
+    }
+}
+
+/* Estilos para la sección de noticias */
+.news-card {
+    transition: var(--transition);
+    height: 100%;
+}
+
+.news-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.edit-btn, .delete-btn {
+    transition: var(--transition);
+}
+
+.edit-btn:hover {
+    color: white;
+    background-color: var(--primary-color);
+}
+
+.delete-btn:hover {
+    color: white;
+    background-color: #dc3545;
+}
+
+#loginSection {
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+}
+
+/* Ajustes para el modal */
+.modal-content {
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilo especial para el botón de Noticias */
+.nav-item.noticias-btn .nav-link {
+    border: 2px solid var(--primary-color);
+    border-radius: 50px;
+    padding: 6px 15px !important;
+    margin-left: 10px;
+    transition: var(--transition);
+}
+
+.nav-item.noticias-btn .nav-link:hover {
+    background-color: var(--primary-color);
+    color: white !important;
+    box-shadow: 0 5px 15px rgba(58, 134, 255, 0.4);
+}
+
+/* Para que el borde sea más visible en el estado activo */
+.nav-item.noticias-btn .nav-link.active {
+    background-color: var(--primary-color);
+    color: white !important;
+}
+
+/* En styles.css - Agrega esto con los estilos del navbar */
+.nav-item.noticias-btn .fa-plus-circle {
+    color: var(--primary-color);
+    transition: var(--transition);
+}
+
+.nav-item.noticias-btn .nav-link:hover .fa-plus-circle {
+    color: white;
+    transform: rotate(90deg);
+}
+
+.nav-item.noticias-btn .nav-link.active .fa-plus-circle {
+    color: white;
+}
+
+/* Estilos para la alerta de error */
+#loginError {
+    border-left: 4px solid #dc3545;
+    animation-duration: 0.5s;
+}
+
+/* Animaciones (necesitarás Animate.css) */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css');
+
+/* O si prefieres sin librería externa, añade esto: */
+@keyframes headShake {
+    0%, 100% { transform: translateX(0); }
+    20%, 60% { transform: translateX(-5px); }
+    40%, 80% { transform: translateX(5px); }
+}
+
+.animate__headShake {
+    animation-name: headShake;
+}
+
+/* Estilos para la vista previa */
+#filePreview {
+    border: 2px dashed #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #f8f9fa;
+}
+
+/* Estilo para el input de archivo personalizado */
+.form-control[type="file"] {
+    padding: 0.375rem;
+}
+
+.form-control[type="file"]::file-selector-button {
+    border: none;
+    padding: 0.375rem 0.75rem;
+    margin-right: 0.5rem;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.form-control[type="file"]::file-selector-button:hover {
+    background-color: #2a75f5;
+}
+
+/* Estilos para videos en tarjetas */
+.card video {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    background-color: #000;
+}
+
+/* Contenedor de relación de aspecto para videos */
+.ratio-16x9 {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+}
+
+.ratio-16x9 > video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Mejora para las tarjetas */
+.legacy-card {
+    transition: all 0.3s ease;
+}
+
+.legacy-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
